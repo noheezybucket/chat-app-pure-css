@@ -1,0 +1,324 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+// primary
+$top-subhead: hsl(276, 100%, 81%);
+$left-chat: hsl(276, 55%, 52%);
+$right-chat: hsl(271, 15%, 43%);
+$text-placeholder: hsl(206, 6%, 79%);
+$main-head: hsl(271, 36%, 24%);
+$paragraph: hsl(270, 7%, 64%);
+
+// gradient
+$magenta: hsl(293, 100%, 63%);
+$violet: hsl(264, 100%, 61%);
+
+// secondary
+$white: hsl(0, 0%, 100%);
+$app-background: hsl(270, 20%, 96%);
+$submit-btn-bg: hsl(271, 36%, 24%);
+$radio-btn-outline: hsl(289, 100%, 72%);
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Rubik;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 95vh;
+  padding: 20px 0;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: -220px;
+    width: 40%;
+    height: 80%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-image: linear-gradient(40deg, $violet 20%, $magenta 100%);
+    @media (max-width: 898px) {
+      width: 60%;
+    }
+    @media (max-width: 425px) {
+      width: 90%;
+      height: 60%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    right: -220px;
+    width: 40%;
+    height: 80%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    opacity: 0.1;
+    background-image: linear-gradient(40deg, $violet 20%, $magenta 100%);
+
+    @media (max-width: 898px) {
+      width: 60%;
+    }
+    @media (max-width: 425px) {
+      width: 90%;
+      height: 60%;
+    }
+  }
+}
+
+#all {
+  // position: absolute;
+  // padding-top: 400px;
+  // left: 50%;
+  // top: 50%;
+  // transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  // flex-wrap: wrap;
+  width: 70%;
+  margin: 0 auto;
+  gap: 90px;
+
+  @media (max-width: 441px) {
+    width: 100% !important;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 925px) {
+    width: 70%;
+    flex-wrap: wrap;
+  }
+}
+
+#phone {
+  position: relative;
+  background-color: $app-background;
+  box-shadow: 10px 25px 50px rgba(182, 182, 182, 0.374);
+  max-width: 300px;
+  width: 100%;
+  // height: 700px;
+  border: 12px solid $white;
+  border-radius: 2em;
+  // left: 80%;
+  // top: 20px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 0;
+    width: 55%;
+    height: 25px;
+    background-color: $white;
+    border-end-end-radius: 1.2em;
+    border-end-start-radius: 1.2em;
+  }
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10px 10px 10px;
+  border-end-end-radius: 0.5em;
+  border-end-start-radius: 0.5em;
+  width: 100%;
+  background-image: linear-gradient(40deg, $violet 20%, $magenta 100%);
+  margin-bottom: 10px;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__dots {
+    color: white;
+    font-size: 1.2em;
+  }
+
+  &__avatar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    &--photo {
+      img {
+        width: 40px;
+        border: 2px solid $white;
+        border-radius: 50%;
+      }
+    }
+
+    &--available {
+      color: white;
+      p:nth-child(1) {
+        font-weight: bold;
+        font-size: 0.7em;
+        padding-bottom: 3px;
+      }
+      p:nth-child(2) {
+        font-size: 0.5em;
+        color: $top-subhead;
+      }
+    }
+  }
+
+  &__arrow {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
+
+.messages {
+  &__left {
+    width: 65%;
+    padding: 0 10px;
+
+    p {
+      color: $left-chat;
+      background-color: hsl(268, 30%, 88%);
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 0.6em;
+      border-radius: 1em;
+      border-end-start-radius: 0em;
+    }
+  }
+
+  &__right {
+    padding: 0 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &--dogs {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-top: 10px;
+      margin-bottom: 5px;
+      img {
+        width: 50px;
+        border-radius: 1em;
+      }
+    }
+
+    &--para {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      p {
+        color: $right-chat;
+        background-color: $white;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 0.6em;
+        border-radius: 1em;
+        border-end-end-radius: 0em;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+.prices {
+  margin: 0 10px;
+  color: $white;
+  width: 70%;
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.6em;
+    border-radius: 1em;
+    border-end-start-radius: 0em;
+    margin-bottom: 10px;
+    background-image: linear-gradient(45deg, $magenta, $violet);
+    padding: 10px;
+
+    &--radio {
+      display: flex;
+      gap: 10px;
+
+      input {
+        outline: $radio-btn-outline;
+      }
+      label {
+        color: $app-background;
+      }
+    }
+
+    &--price {
+      font-weight: 500;
+      font-size: 1.4em;
+    }
+  }
+}
+
+.text {
+  margin: 10px;
+  padding: 5px;
+  background-color: $white;
+  border-radius: 2em;
+  font-size: 0.6em;
+
+  &__type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--placeholder {
+      color: $text-placeholder;
+      margin-left: 10px;
+      font-size: 1.2em;
+    }
+    &--btn {
+      background-color: $submit-btn-bg;
+      font-weight: bold;
+      font-size: 2em;
+      color: white;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+
+#bookingtext {
+  width: 50%;
+  @media (max-width: 925px) {
+    text-align: center;
+    width: 90%;
+  }
+  h1 {
+    color: $main-head;
+    margin-bottom: 10px;
+  }
+  p {
+    color: $paragraph;
+    line-height: 1.5em;
+  }
+}

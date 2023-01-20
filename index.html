@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>CSS-Only Chat App</title>
+
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
+  <body>
+    <!-- <div id="app"> -->
+    <div id="vector"></div>
+    <div id="vector2"></div>
+
+    <div id="all">
+      <div id="phone">
+        <div id="contact">
+          <div id="contact__info">
+            <div id="contact__arrow">&lsaquo;</div>
+            <div id="contact__avatar">
+              <div id="contact__avatar--photo">
+                <img src="./images/avatar.jpg" alt="" />
+              </div>
+              <div id="contact__avatar--available">
+                <p>Gèy Ndioro</p>
+                <p>Available to Walk</p>
+              </div>
+            </div>
+          </div>
+          <div id="contact__dots">&#8942;</div>
+        </div>
+
+        <div class="messages">
+          <!-- left messages -->
+          <div class="messages__left">
+            <p>That sounds great. I'd be happy with that</p>
+            <p>Could you send over somme pictures of your dog, please ?</p>
+          </div>
+          <!-- right messages -->
+          <div class="messages__right">
+            <div class="messages__right--dogs">
+              <div>
+                <img src="./images/dog-image-1.jpg" alt="Dog number 1" />
+              </div>
+              <div>
+                <img src="./images/dog-image-2.jpg" alt="Dog number 2" />
+              </div>
+              <div>
+                <img src="./images/dog-image-3.jpg" alt="Dog number 3" />
+              </div>
+            </div>
+
+            <div class="messages__right--para">
+              <p>Here are a few pictures. She's a happy girl!</p>
+              <p>Can you make it?</p>
+            </div>
+          </div>
+          <!-- left messages -->
+          <div class="messages__left">
+            <p>
+              She looks so happy! The time we discussed works. How long shall I
+              take her out for?
+            </p>
+          </div>
+        </div>
+        <!-- prices -->
+        <div class="prices">
+          <div class="prices__box">
+            <div class="prices__box--radio">
+              <input type="radio" name="radio" id="radio" />
+              <label for="radio">30 minutes walk</label>
+            </div>
+
+            <div class="prices__box--price">
+              <p>$29</p>
+            </div>
+          </div>
+          <div class="prices__box">
+            <div class="prices__box--radio">
+              <input type="radio" name="radio" id="radio" />
+              <label for="radio">1 hour walk</label>
+            </div>
+
+            <div class="prices__box--price">
+              <p>$49</p>
+            </div>
+          </div>
+        </div>
+        <!-- message box -->
+        <div class="text">
+          <div class="text__type">
+            <p class="text__type--placeholder">Type message...</p>
+            <div class="text__type--btn"><p>&rsaquo;</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bookingtext">
+        <h1>Simple booking</h1>
+        <p>
+          Stay in touch with our dog walkers through the chat interface. This
+          makes it easy to discuss arrangements and make bookings. Once the walk
+          has been completed you can rate your walker and book again all through
+          the chat.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
